@@ -315,4 +315,52 @@ textarea:focus {
 .modal-content {
   background-color: var(--bg-light);
   padding: 1.5rem;
-  bor
+  border-radius: 1rem;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Footer */
+.site-footer p {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Responsive nav and layout */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .main-nav ul {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    display: none;
+  }
+
+  .main-nav ul.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+}
