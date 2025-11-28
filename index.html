@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luis Soto Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Luis Soto</div>
+
+    <nav class="main-nav">
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <ul id="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      🌙
+    </button>
+  </header>
+
+  <main>
+    <!-- Section 1: Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <h1>Hi, I am Luis Soto</h1>
+        <p>I am a student interested in web development and cybersecurity. I like building simple, clean websites using HTML, CSS, and JavaScript.</p>
+        <button id="intro-button" class="primary-btn">Show quick intro</button>
+        <p id="intro-text" class="intro-text" hidden>
+          I enjoy learning new tools, building small projects, and improving my coding skills one project at a time.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img src="img/hero.jpg" alt="Person working on a laptop at a desk">
+      </div>
+    </section>
+
+    <!-- Section 2: Projects -->
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <p class="section-subtitle">Some small projects I have worked on or would like to build.</p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <img src="img/project1.jpg" alt="Screenshot of a landing page">
+          <h3>Simple Landing Page</h3>
+          <p>A clean landing page with a hero section, responsive layout, and basic interactions.</p>
+          <button class="more-info-btn" data-project="1">More info</button>
+        </article>
+
+        <article class="project-card">
+          <img src="img/project2.jpg" alt="Screenshot of a dashboard design">
+          <h3>Mini Dashboard</h3>
+          <p>A basic dashboard layout using cards to show simple stats or information.</p>
+          <button class="more-info-btn" data-project="2">More info</button>
+        </article>
+
+        <article class="project-card">
+          <img src="img/project3.jpg" alt="Screenshot of a gallery website">
+          <h3>Image Gallery</h3>
+          <p>A small gallery that focuses on good spacing, grid layout, and clear images.</p>
+          <button class="more-info-btn" data-project="3">More info</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 3: Contact -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>If you would like to connect or chat about a project, feel free to send a message.</p>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name">
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com">
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write your message here"></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">Send message</button>
+        <p id="form-feedback" class="form-feedback"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="modal-title">Project title</h3>
+      <p id="modal-body">Project details will appear here.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2025 Luis Soto</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
