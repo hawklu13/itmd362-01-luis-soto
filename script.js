@@ -1,4 +1,4 @@
-// Nav toggle for mobile
+// Nav toggle
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
 
@@ -11,76 +11,48 @@ if (navToggle && navMenu) {
 // Theme toggle
 const themeToggle = document.getElementById("theme-toggle");
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    const isLight = document.body.classList.contains("light-mode");
-    themeToggle.textContent = isLight ? "☀️" : "🌙";
-  });
-}
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+  themeToggle.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+});
 
 // Contact form validation
 const contactForm = document.getElementById("contact-form");
 const feedback = document.getElementById("form-feedback");
 
-if (contactForm && feedback) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    const name = contactForm.name.value.trim();
-    const email = contactForm.email.value.trim();
-    const message = contactForm.message.value.trim();
+  const name = contactForm.name.value.trim();
+  const email = contactForm.email.value.trim();
+  const message = contactForm.message.value.trim();
 
-    if (!name || !email || !message) {
-      feedback.textContent = "Please fill out all fields.";
-      feedback.style.color = "#f97373";
-      return;
-    }
+  if (!name || !email || !message) {
+    feedback.textContent = "Please fill out all fields.";
+    feedback.style.color = "red";
+    return;
+  }
 
-    if (!email.includes("@") || !email.includes(".")) {
-      feedback.textContent = "Please enter a valid email.";
-      feedback.style.color = "#f97373";
-      return;
-    }
+  feedback.textContent = "Message sent!";
+  feedback.style.color = "lightgreen";
+  contactForm.reset();
+});
 
-    feedback.textContent = "Message sent. Thank you for reaching out.";
-    feedback.style.color = "#4ade80";
-
-    contactForm.reset();
-  });
-}
-
-// Modal for bigger project images
+// Modal functionality
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modal-close");
 const modalImage = document.getElementById("modal-image");
 
-if (modal && modalClose && modalImage) {
-  document.querySelectorAll(".more-info-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const projectCard = button.closest(".project-card");
-      const img = projectCard.querySelector(".project-image");
-
-      if (!img) return;
-
-      modalImage.src = img.src;
-      modalImage.alt = img.alt || "Enlarged project image";
-
-      modal.classList.add("active");
-      modal.setAttribute("aria-hidden", "false");
-    });
+document.querySelectorAll(".more-info-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".project-card");
+    const img = card.querySelector(".project-image");
+    modalImage.src = img.src;
+    modal.classList.add("active");
   });
+});
 
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-  });
-
-  // Close modal when clicking outside the content
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.classList.remove("active");
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
-}
+modalClose.addEventListener("click", () => modal.classList.remove("active"));
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.classList.remove("active");
+});

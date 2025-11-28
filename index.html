@@ -13,9 +13,7 @@
     <div class="logo">Luis Soto</div>
 
     <nav class="main-nav">
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-        ☰
-      </button>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul id="nav-menu">
         <li><a href="#hero">Home</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -23,16 +21,14 @@
       </ul>
     </nav>
 
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-      🌙
-    </button>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
   </header>
 
 
   <!-- Main Content -->
   <main>
 
-    <!-- Section 1: Hero -->
+    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-text">
         <h1>Hi, my name is Luis!</h1>
@@ -46,12 +42,12 @@
       </div>
 
       <div class="hero-image">
-        <img src="img/heroimage.jpg" alt="Working at a laptop">
+        <img src="img/heroimg.JPG" alt="Working at a laptop">
       </div>
     </section>
 
 
-    <!-- Section 2: Projects -->
+    <!-- Projects Section -->
     <section id="projects" class="projects">
       <h2>Projects</h2>
       <p class="section-subtitle">
@@ -62,7 +58,7 @@
 
         <!-- Project 1 -->
         <article class="project-card">
-          <img src="img/project1.png" alt="ITMD361 web project screenshot" class="project-image">
+          <img src="img/project1.png" alt="ITMD 361 project screenshot" class="project-image">
           <h3>ITMD 361 Project</h3>
           <p>
             This was an assignment for one of my classes last year. I had to turn my resume
@@ -70,7 +66,7 @@
             my favorite sports team, and the last page was an interactive map with pinpoints
             of my three favorite places. I built it using HTML, CSS, and JavaScript.
           </p>
-          <button class="more-info-btn" data-project="1">More info</button>
+          <button class="more-info-btn">More info</button>
         </article>
 
         <!-- Project 2 -->
@@ -79,19 +75,18 @@
           <h3>AP Computer Science Principles Project</h3>
           <p>
             This was my project for AP Computer Science Principles in high school. I was 14,
-            and it was the first thing I ever coded. It was a simple app that pulled NBA team
-            information from a data table. You could pick a team from a dropdown and see basic
-            info about them. It only used JavaScript, but it was fun and made me excited to keep
-            learning more about programming.
+            and it was the first thing I ever coded. It pulled NBA team data from a table
+            and let you choose a team from a dropdown menu to see more info. It was simple,
+            but it made me excited to keep learning how to code.
           </p>
-          <button class="more-info-btn" data-project="2">More info</button>
+          <button class="more-info-btn">More info</button>
         </article>
 
       </div>
     </section>
 
 
-    <!-- Section 3: Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>If you would like to connect or talk about a project, feel free to send a message.</p>
@@ -99,7 +94,7 @@
       <div class="contact-layout">
 
         <div class="contact-image-wrapper">
-          <img src="img/heroimage2.jpg" alt="Left decorative image">
+          <img src="img/heroimage2.jpg" alt="Left image">
         </div>
 
         <form id="contact-form" class="contact-form" novalidate>
@@ -123,7 +118,7 @@
         </form>
 
         <div class="contact-image-wrapper">
-          <img src="img/heroimage3.jpeg" alt="Right decorative image">
+          <img src="img/heroimage3.jpeg" alt="Right image">
         </div>
 
       </div>
@@ -132,11 +127,11 @@
   </main>
 
 
-  <!-- Modal Pop-Up for enlarged images -->
+  <!-- Modal -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-content">
-      <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
-      <img id="modal-image" src="" alt="Enlarged project image">
+      <button id="modal-close" class="modal-close">×</button>
+      <img id="modal-image" src="" alt="Large project image">
     </div>
   </div>
 
