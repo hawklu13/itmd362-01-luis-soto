@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- header section for my name, nav links, and theme button -->
   <header class="site-header">
     <div class="logo">Luis Soto</div>
 
@@ -25,11 +25,10 @@
     </button>
   </header>
 
-
-  <!-- Main Content -->
+  <!-- main section that holds all the page content -->
   <main>
 
-    <!-- Hero Section -->
+    <!-- hero section with my intro and main image -->
     <section id="hero" class="hero">
       <div class="hero-text">
         <h1>Hi, my name is Luis!</h1>
@@ -43,12 +42,11 @@
       </div>
 
       <div class="hero-image">
-        <img src="img/heroimage.JPG" alt="Working at a laptop">
+        <img src="img/heroimg.JPG" alt="Working at a laptop">
       </div>
     </section>
 
-
-    <!-- Projects Section -->
+    <!-- projects section that shows two of my past projects -->
     <section id="projects" class="projects">
       <h2>Projects</h2>
       <p class="section-subtitle">
@@ -57,7 +55,7 @@
 
       <div class="project-grid">
 
-        <!-- Project 1 -->
+        <!-- first project card -->
         <article class="project-card">
           <img src="img/project1.png" alt="ITMD 361 project screenshot" class="project-image">
           <h3>ITMD 361 Project</h3>
@@ -70,7 +68,7 @@
           <button class="more-info-btn">More info</button>
         </article>
 
-        <!-- Project 2 -->
+        <!-- second project card -->
         <article class="project-card">
           <img src="img/project2.png" alt="AP CSP project screenshot" class="project-image">
           <h3>AP Computer Science Principles Project</h3>
@@ -86,18 +84,19 @@
       </div>
     </section>
 
-
-    <!-- Contact Section -->
+    <!-- contact section for sending me a message -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>If you would like to connect or talk about a project, feel free to send a message.</p>
 
       <div class="contact-layout">
 
+        <!-- image on the left side of the contact form -->
         <div class="contact-image-wrapper">
           <img src="img/heroimage2.jpg" alt="Left image">
         </div>
 
+        <!-- simple contact form with name, email, and message -->
         <form id="contact-form" class="contact-form" novalidate>
           <div class="form-row">
             <label for="name">Name</label>
@@ -118,6 +117,7 @@
           <p id="form-feedback" class="form-feedback"></p>
         </form>
 
+        <!-- image on the right side of the contact form -->
         <div class="contact-image-wrapper">
           <img src="img/heroimage3.jpeg" alt="Right image">
         </div>
@@ -127,8 +127,7 @@
 
   </main>
 
-
-  <!-- Modal -->
+  <!-- modal used to show bigger versions of the project images -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <button id="modal-close" class="modal-close">×</button>
@@ -136,13 +135,11 @@
     </div>
   </div>
 
-
-  <!-- Footer -->
+  <!-- footer with my name and year -->
   <footer class="site-footer">
     <p>© 2025 Luis Soto</p>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
