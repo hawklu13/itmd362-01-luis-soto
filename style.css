@@ -43,6 +43,7 @@ main,
 .site-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 1.5rem;
   background-color: var(--bg-light);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -69,17 +70,15 @@ main,
   color: var(--accent);
 }
 
-.nav-toggle {
-  display: none;
-}
-
 /* THEME BUTTON */
 .theme-toggle {
-  background-color: rgba(56,189,248,0.2);
-  border: none;
-  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  border: 1px solid var(--muted);
+  color: var(--text);
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 /* HERO SECTION */
@@ -163,7 +162,7 @@ main,
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.45;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem; /* more space before button */
 }
 
 /* BUTTONS */
@@ -178,6 +177,10 @@ main,
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.2s ease;
+}
+
+.more-info-btn {
+  align-self: flex-start;
 }
 
 .more-info-btn:hover,
