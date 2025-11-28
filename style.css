@@ -7,6 +7,7 @@
   padding: 0;
 }
 
+/* Color system */
 :root {
   --bg: #020617;
   --bg-light: #020617;
@@ -28,6 +29,7 @@ body.light-mode {
   --border-subtle: rgba(148, 163, 184, 0.6);
 }
 
+/* Base body */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg);
@@ -35,15 +37,24 @@ body {
   line-height: 1.5;
 }
 
+/* Simple page width limiter so content is centered */
+main,
+.site-header,
+.site-footer {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 /* Header and footer */
 .site-header,
 .site-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 5vw;
+  justify-content: center;
+  padding: 1rem 1.5rem;
   background-color: var(--bg-light);
   border-bottom: 1px solid var(--border-subtle);
+  text-align: center;
 }
 
 .site-footer {
@@ -58,6 +69,11 @@ body {
   font-size: 1.05rem;
 }
 
+/* Header layout */
+.site-header {
+  gap: 1.5rem;
+}
+
 /* Nav */
 .main-nav {
   display: flex;
@@ -70,6 +86,7 @@ body {
   list-style: none;
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .main-nav a {
@@ -101,12 +118,13 @@ body {
   font-size: 0.9rem;
 }
 
-/* Hero layout */
+/* Hero section */
 .hero {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 3rem 5vw;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
   gap: 2rem;
 }
 
@@ -116,20 +134,22 @@ body {
 }
 
 .hero-text p {
-  max-width: 30rem;
-  margin-bottom: 1rem;
+  max-width: 32rem;
+  margin: 0 auto 1rem;
   color: var(--muted);
 }
 
 .intro-text {
   margin-top: 0.75rem;
-  max-width: 30rem;
+  max-width: 32rem;
   color: var(--accent);
   font-size: 0.95rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-image img {
-  max-width: 340px;
+  max-width: 320px;
   width: 100%;
   border-radius: 1.5rem;
   object-fit: cover;
@@ -151,14 +171,13 @@ body {
   opacity: 0.9;
 }
 
-/* Sections */
-.projects,
-.contact {
-  padding: 2rem 5vw 3rem;
+/* Projects section */
+.projects {
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
 }
 
-.projects h2,
-.contact h2 {
+.projects h2 {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
@@ -168,11 +187,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Project grid */
+/* Project grid - still using grid even with two cards */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1.5rem;
+  justify-items: center;
 }
 
 .project-card {
@@ -181,9 +201,12 @@ body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
   border: 1px solid transparent;
   transition: transform 0.15s ease, border-color 0.15s ease;
+  max-width: 280px;
+  text-align: center;
 }
 
 .project-card:hover {
@@ -208,7 +231,7 @@ body {
 }
 
 .more-info-btn {
-  align-self: flex-start;
+  align-self: center;
   margin-top: 0.5rem;
   background-color: transparent;
   border-radius: 999px;
@@ -223,7 +246,12 @@ body {
   border-color: var(--accent);
 }
 
-/* Contact form */
+/* Contact section */
+.contact {
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+}
+
 .contact p {
   margin-bottom: 1rem;
 }
@@ -233,6 +261,8 @@ body {
   background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-row {
@@ -285,62 +315,4 @@ textarea:focus {
 .modal-content {
   background-color: var(--bg-light);
   padding: 1.5rem;
-  border-radius: 1rem;
-  max-width: 420px;
-  width: 100%;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.7rem;
-  background: transparent;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-/* Footer */
-.site-footer p {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* Responsive nav and layout */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text p,
-  .intro-text {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-image img {
-    max-width: 260px;
-  }
-
-  .main-nav ul {
-    position: absolute;
-    top: 48px;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--bg-light);
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    border: 1px solid var(--border-subtle);
-    display: none;
-  }
-
-  .main-nav ul.open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: inline-block;
-  }
-}
+  bor

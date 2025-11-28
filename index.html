@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="logo">Luis Soto</div>
 
@@ -26,13 +28,18 @@
     </button>
   </header>
 
+
+  <!-- Main Content -->
   <main>
+
     <!-- Section 1: Hero -->
     <section id="hero" class="hero">
       <div class="hero-text">
         <h1>Hi, I am Luis Soto</h1>
-        <p>I am a student interested in web development and cybersecurity. I like building simple, clean websites using HTML, CSS, and JavaScript.</p>
+        <p>I am a student interested in web development and cybersecurity. I enjoy building simple, clean websites using HTML, CSS, and JavaScript.</p>
+
         <button id="intro-button" class="primary-btn">Show quick intro</button>
+
         <p id="intro-text" class="intro-text" hidden>
           I enjoy learning new tools, building small projects, and improving my coding skills one project at a time.
         </p>
@@ -43,12 +50,15 @@
       </div>
     </section>
 
+
     <!-- Section 2: Projects -->
     <section id="projects" class="projects">
       <h2>Projects</h2>
       <p class="section-subtitle">Some small projects I have worked on or would like to build.</p>
 
       <div class="project-grid">
+
+        <!-- Project 1 -->
         <article class="project-card">
           <img src="img/project1.jpg" alt="Screenshot of a landing page">
           <h3>Simple Landing Page</h3>
@@ -56,6 +66,7 @@
           <button class="more-info-btn" data-project="1">More info</button>
         </article>
 
+        <!-- Project 2 -->
         <article class="project-card">
           <img src="img/project2.jpg" alt="Screenshot of a dashboard design">
           <h3>Mini Dashboard</h3>
@@ -63,19 +74,14 @@
           <button class="more-info-btn" data-project="2">More info</button>
         </article>
 
-        <article class="project-card">
-          <img src="img/project3.jpg" alt="Screenshot of a gallery website">
-          <h3>Image Gallery</h3>
-          <p>A small gallery that focuses on good spacing, grid layout, and clear images.</p>
-          <button class="more-info-btn" data-project="3">More info</button>
-        </article>
       </div>
     </section>
+
 
     <!-- Section 3: Contact -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>If you would like to connect or chat about a project, feel free to send a message.</p>
+      <p>If you would like to connect or talk about a project, feel free to send a message.</p>
 
       <form id="contact-form" class="contact-form" novalidate>
         <div class="form-row">
@@ -97,21 +103,26 @@
         <p id="form-feedback" class="form-feedback"></p>
       </form>
     </section>
+
   </main>
 
-  <!-- Modal -->
+
+  <!-- Modal Pop-Up -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="modal-title">Project title</h3>
+      <h3 id="modal-title">Project Title</h3>
       <p id="modal-body">Project details will appear here.</p>
     </div>
   </div>
 
+
+  <!-- Footer -->
   <footer class="site-footer">
     <p>© 2025 Luis Soto</p>
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
