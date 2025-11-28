@@ -37,7 +37,7 @@ body {
   line-height: 1.5;
 }
 
-/* Simple page width limiter */
+/* Page width */
 main,
 .site-header,
 .site-footer {
@@ -252,19 +252,20 @@ main,
 .contact-layout {
   margin-top: 1.8rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 1.5rem;
 }
 
 .contact-image-wrapper {
   flex: 0 0 auto;
-  max-width: 180px;
+  max-width: 120px;
 }
 
 .contact-image-wrapper img {
   width: 100%;
-  border-radius: 1rem;
+  height: auto;
+  border-radius: 0.75rem;
   object-fit: cover;
 }
 
@@ -311,7 +312,7 @@ textarea:focus {
 .modal {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.7);
+  background-color: rgba(15, 23, 42, 0.75);
   display: none;
   align-items: center;
   justify-content: center;
@@ -325,13 +326,14 @@ textarea:focus {
 
 .modal-content {
   background-color: var(--bg-light);
-  padding: 1rem;
+  padding: 0.75rem 1rem 1rem;
   border-radius: 1rem;
-  max-width: 520px;
+  max-width: 480px;
   width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .modal-close {
@@ -399,6 +401,9 @@ textarea:focus {
 
   .contact-layout {
     flex-direction: column;
-    align-items: center;
+  }
+
+  .contact-image-wrapper {
+    max-width: 160px;
   }
 }
