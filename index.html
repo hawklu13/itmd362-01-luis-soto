@@ -39,14 +39,14 @@
         <p>
           I am a student with a growing interest in web development and cybersecurity.
           I enjoy learning how websites work, experimenting with different tools, and
-          building projects that help me improve my skills. I'm always trying to get
+          building projects that help me improve my skills. I am always trying to get
           better with HTML, CSS, and JavaScript, and this website is one of the ways
-          I practice what I'm learning.
+          I practice what I am learning.
         </p>
       </div>
 
       <div class="hero-image">
-        <img src="img/heroimage.JPG" alt="Person working on a laptop at a desk">
+        <img src="img/hero.jpg" alt="Person working on a laptop at a desk">
       </div>
     </section>
 
@@ -62,7 +62,7 @@
 
         <!-- Project 1 -->
         <article class="project-card">
-          <img src="img/project1.png" alt="Screenshot of ITMD 361 web project">
+          <img src="img/project1.jpg" alt="Screenshot of ITMD 361 web project" class="project-image">
           <h3>ITMD 361 Project</h3>
           <p>
             This was an assignment for one of my classes last year. I had to turn my resume
@@ -75,7 +75,7 @@
 
         <!-- Project 2 -->
         <article class="project-card">
-          <img src="img/project2.png" alt="Screenshot of AP Computer Science Principles project">
+          <img src="img/project2.jpg" alt="Screenshot of AP Computer Science Principles project" class="project-image">
           <h3>AP Computer Science Principles Project</h3>
           <p>
             This was my project for AP Computer Science Principles in high school. I was 14,
@@ -98,36 +98,45 @@
         If you would like to connect or talk about a project, feel free to send a message.
       </p>
 
-      <form id="contact-form" class="contact-form" novalidate>
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name">
+      <div class="contact-layout">
+        <div class="contact-image-wrapper">
+          <img src="img/contact-left.jpg" alt="Decorative image on the left side of the contact section">
         </div>
 
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="your@email.com">
-        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name">
+          </div>
 
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Write your message here"></textarea>
-        </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com">
+          </div>
 
-        <button type="submit" class="primary-btn">Send message</button>
-        <p id="form-feedback" class="form-feedback"></p>
-      </form>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here"></textarea>
+          </div>
+
+          <button type="submit" class="primary-btn">Send message</button>
+          <p id="form-feedback" class="form-feedback"></p>
+        </form>
+
+        <div class="contact-image-wrapper">
+          <img src="img/contact-right.jpg" alt="Decorative image on the right side of the contact section">
+        </div>
+      </div>
     </section>
 
   </main>
 
 
-  <!-- Modal Pop-Up -->
+  <!-- Modal Pop-Up for bigger project image -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <button id="modal-close" class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="modal-title">Project Title</h3>
-      <p id="modal-body">Project details will appear here.</p>
+      <img id="modal-image" src="" alt="Enlarged project image">
     </div>
   </div>
 

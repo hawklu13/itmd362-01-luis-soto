@@ -37,7 +37,7 @@ body {
   line-height: 1.5;
 }
 
-/* Simple page width limiter so content is centered */
+/* Simple page width limiter */
 main,
 .site-header,
 .site-footer {
@@ -50,17 +50,18 @@ main,
 .site-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem 1.5rem;
   background-color: var(--bg-light);
   border-bottom: 1px solid var(--border-subtle);
-  text-align: center;
 }
 
 .site-footer {
   border-top: 1px solid var(--border-subtle);
   border-bottom: none;
   margin-top: 3rem;
+  justify-content: center;
+  text-align: center;
 }
 
 .logo {
@@ -86,7 +87,6 @@ main,
   list-style: none;
   display: flex;
   gap: 1rem;
-  justify-content: center;
 }
 
 .main-nav a {
@@ -121,31 +121,28 @@ main,
 /* Hero section */
 .hero {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
   padding: 3rem 1.5rem 2rem;
   gap: 2rem;
 }
 
+.hero-text {
+  flex: 1;
+}
+
 .hero-text h1 {
   font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .hero-text p {
-  max-width: 32rem;
-  margin: 0 auto 1rem;
+  max-width: 34rem;
   color: var(--muted);
 }
 
-.intro-text {
-  margin-top: 0.75rem;
-  max-width: 32rem;
-  color: var(--accent);
-  font-size: 0.95rem;
-  margin-left: auto;
-  margin-right: auto;
+.hero-image {
+  flex: 0 0 auto;
 }
 
 .hero-image img {
@@ -174,7 +171,6 @@ main,
 /* Projects section */
 .projects {
   padding: 2rem 1.5rem 3rem;
-  text-align: center;
 }
 
 .projects h2 {
@@ -187,12 +183,11 @@ main,
   margin-bottom: 1.5rem;
 }
 
-/* Project grid - still using grid even with two cards */
+/* Project grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  justify-items: center;
 }
 
 .project-card {
@@ -201,12 +196,9 @@ main,
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.5rem;
   border: 1px solid transparent;
   transition: transform 0.15s ease, border-color 0.15s ease;
-  max-width: 280px;
-  text-align: center;
 }
 
 .project-card:hover {
@@ -231,7 +223,7 @@ main,
 }
 
 .more-info-btn {
-  align-self: center;
+  align-self: flex-start;
   margin-top: 0.5rem;
   background-color: transparent;
   border-radius: 999px;
@@ -248,12 +240,32 @@ main,
 
 /* Contact section */
 .contact {
-  padding: 2rem 1.5rem 3rem;
+  padding: 2rem 1.5rem 3.5rem;
   text-align: center;
 }
 
 .contact p {
-  margin-bottom: 1rem;
+  margin-top: 0.3rem;
+}
+
+/* Contact layout with side images */
+.contact-layout {
+  margin-top: 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-image-wrapper {
+  flex: 0 0 auto;
+  max-width: 180px;
+}
+
+.contact-image-wrapper img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
 }
 
 .contact-form {
@@ -261,10 +273,9 @@ main,
   background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 1rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
+/* Form fields */
 .form-row {
   display: flex;
   flex-direction: column;
@@ -314,21 +325,30 @@ textarea:focus {
 
 .modal-content {
   background-color: var(--bg-light);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 1rem;
-  max-width: 420px;
+  max-width: 520px;
   width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .modal-close {
   position: absolute;
-  top: 0.5rem;
+  top: 0.4rem;
   right: 0.7rem;
   background: transparent;
   border: none;
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+#modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 0.75rem;
+  object-fit: contain;
 }
 
 /* Footer */
@@ -340,8 +360,7 @@ textarea:focus {
 /* Responsive nav and layout */
 @media (max-width: 768px) {
   .site-header {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: row;
   }
 
   .main-nav ul {
@@ -362,5 +381,24 @@ textarea:focus {
 
   .nav-toggle {
     display: inline-block;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .contact-layout {
+    flex-direction: column;
+    align-items: center;
   }
 }

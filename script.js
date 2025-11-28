@@ -15,21 +15,6 @@ themeToggle.addEventListener("click", () => {
   themeToggle.textContent = isLight ? "☀️" : "🌙";
 });
 
-// Intro text toggle
-const introButton = document.getElementById("intro-button");
-const introText = document.getElementById("intro-text");
-
-introButton.addEventListener("click", () => {
-  const isHidden = introText.hasAttribute("hidden");
-  if (isHidden) {
-    introText.removeAttribute("hidden");
-    introButton.textContent = "Hide intro";
-  } else {
-    introText.setAttribute("hidden", "");
-    introButton.textContent = "Show quick intro";
-  }
-});
-
 // Contact form validation
 const contactForm = document.getElementById("contact-form");
 const feedback = document.getElementById("form-feedback");
@@ -59,23 +44,18 @@ contactForm.addEventListener("submit", (event) => {
   contactForm.reset();
 });
 
-// Project modal
+// Modal for bigger project images
 const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modal-title");
-const modalBody = document.getElementById("modal-body");
 const modalClose = document.getElementById("modal-close");
-
-const projectDescriptions = {
-  1: "This project is a simple landing page that focuses on clean layout, readable text, and a strong hero section.",
-  2: "This project is a mini dashboard layout that uses cards to organize information in a clear way.",
-  3: "This project is an image gallery that highlights spacing, grid layout, and simple hover effects."
-};
+const modalImage = document.getElementById("modal-image");
 
 document.querySelectorAll(".more-info-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    const id = button.dataset.project;
-    modalTitle.textContent = button.parentElement.querySelector("h3").textContent;
-    modalBody.textContent = projectDescriptions[id];
+    const projectCard = button.closest(".project-card");
+    const img = projectCard.querySelector(".project-image");
+
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
   });
@@ -86,7 +66,7 @@ modalClose.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", "true");
 });
 
-// Close modal on outside click
+// Close modal when clicking outside content
 modal.addEventListener("click", (event) => {
   if (event.target === modal) {
     modal.classList.remove("active");
